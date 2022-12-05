@@ -15,7 +15,7 @@
 }
 :root {
   /* Color Palette */
-  --background-color: #f3fcffaa;
+  --background-color: #fff;
   --accent-color: #47b5ff;
   --dark-color: #273a9a;
   --light-color: #fff;
@@ -45,7 +45,8 @@ button {
   border: 3px solid var(--accent-color);
   color: var(--accent-color);
 }
-button:hover {
+button:hover,
+button.active {
   cursor: pointer;
   background-color: var(--accent-color);
   color: var(--light-color);
@@ -98,8 +99,8 @@ header select {
 }
 
 /*  =============
-    Tasks Section
-    =============  */
+Tasks Section
+=============  */
 main {
   margin-top: 20px;
   border: 3px solid var(--accent-color);
@@ -115,8 +116,8 @@ main .task {
   margin-bottom: 10px;
 }
 .task .task-title {
-  margin-left: 10px;
-  margin-right: 5px;
+  position: relative;
+  margin: 5px;
   color: var(--dark-color);
 }
 .task .btns button {
@@ -131,5 +132,54 @@ main .task {
 main .task .details {
   grid-column: 1 / 4;
   color: var(--dark-color);
-  /* display: none; */
+  line-height: 1.6;
+  margin-top: 10px;
+}
+/* Check Box Style */
+.task .checkbox {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--dark-color);
+  cursor: pointer;
+}
+.task .checkbox::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* Style */
+  width: 10px;
+  height: 10px;
+}
+.task .checkbox:hover::before {
+  background-color: var(--dark-color);
+  opacity: 0.7;
+}
+.task .checkbox.checked::before {
+  background-color: var(--dark-color);
+}
+/* Style For Progress Task */
+.task.progress .task-title::before,
+.task.progress .task-title::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #333;
+}
+.task.progress .task-title::after {
+  background-color: var(--accent-color);
+}
+.task.progress .up-down:hover {
+  background-color: transparent;
+  color: var(--dark-color);
+}
+.task.progress .up-down i:hover {
+  background-color: var(--dark-color);
+  color: var(--light-color);
 }
