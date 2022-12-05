@@ -3,6 +3,7 @@
     1. Global Rules [including: variables, container]
     2. Header
     3. Habit Tracker
+    4. Tasks Section
 */
 
 /*  ============
@@ -14,9 +15,9 @@
 }
 :root {
   /* Color Palette */
-  --background-color: #fff;
+  --background-color: #f3fcffaa;
   --accent-color: #47b5ff;
-  --dark-color: #06283d;
+  --dark-color: #273a9a;
   --light-color: #fff;
   /* Distance */
   --bar-height: 60px;
@@ -38,6 +39,17 @@ body {
     width: 800px;
   }
 }
+select,
+button {
+  background-color: transparent;
+  border: 3px solid var(--accent-color);
+  color: var(--accent-color);
+}
+button:hover {
+  cursor: pointer;
+  background-color: var(--accent-color);
+  color: var(--light-color);
+}
 
 /*  ======
     Header
@@ -51,11 +63,7 @@ header {
 }
 header select,
 header .new-task {
-  background-color: transparent;
-  border: none;
-  border: 3px solid var(--accent-color);
   border-bottom: none;
-  color: var(--accent-color);
   font-weight: bold;
 }
 header select {
@@ -63,15 +71,10 @@ header select {
   font-size: 1.2em;
   margin-right: 10px;
 }
-header .new-task:hover {
-  cursor: pointer;
-  background-color: var(--accent-color);
-  color: var(--light-color);
-}
 
 /*  =============
-Habit Tracker
-=============  */
+    Habit Tracker
+    =============  */
 .habit-tracker {
   margin-top: 5px;
   border-top: 3px solid var(--accent-color);
@@ -79,17 +82,54 @@ Habit Tracker
 }
 .habit-tracker span {
   display: inline-block;
-  background-color: transparent;
-  border: none;
+  padding: 8px;
   border: 3px solid var(--accent-color);
   border-top: none;
+  /* Test Style */
   color: var(--accent-color);
   font-weight: bold;
-  padding: 8px;
+  user-select: none;
 }
 .habit-tracker span:hover,
 .habit-tracker span.active {
   cursor: pointer;
   background-color: var(--accent-color);
   color: var(--light-color);
+}
+
+/*  =============
+    Tasks Section
+    =============  */
+main {
+  margin-top: 20px;
+  border: 3px solid var(--accent-color);
+  padding: 0 10px;
+}
+main .task {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 10px;
+  align-items: center;
+  border-bottom: 3px solid var(--dark-color);
+  margin-bottom: 10px;
+}
+.task .task-title {
+  margin-left: 10px;
+  margin-right: 5px;
+  color: var(--dark-color);
+}
+.task .btns button {
+  margin-left: 5px;
+  color: var(--dark-color);
+  border-color: var(--dark-color);
+}
+.task .btns button:hover {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+main .task .details {
+  grid-column: 1 / 4;
+  color: var(--dark-color);
+  /* display: none; */
 }
