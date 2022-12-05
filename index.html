@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Habit Tracker | Mohammed Beltagy</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  
-  <script src="app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit Tracker | Mohammed Beltagy</title>
+    <!-- Cairo Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Manrope:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <!-- Normalize File -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <select>
+          <option value="option 1">New List</option>
+          <option value="option 2">Delete List</option>
+          <option value="option 3" selected>option 3</option>
+        </select>
+        <button class="new-task"><i class="fa-solid fa-plus fa-2x"></i></button>
+      </header>
+      <section id="habit-tracker" class="habit-tracker">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span class="active">8</span>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
 </html>

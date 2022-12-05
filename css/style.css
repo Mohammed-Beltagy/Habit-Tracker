@@ -1,0 +1,95 @@
+/*  Style Section Navigator:-
+    =======================
+    1. Global Rules [including: variables, container]
+    2. Header
+    3. Habit Tracker
+*/
+
+/*  ============
+    Global Rules
+    ============  */
+* {
+  box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
+}
+:root {
+  /* Color Palette */
+  --background-color: #fff;
+  --accent-color: #47b5ff;
+  --dark-color: #06283d;
+  --light-color: #fff;
+  /* Distance */
+  --bar-height: 60px;
+}
+body {
+  background-color: var(--background-color);
+}
+.container {
+  margin: 20px auto 0;
+  padding: 0 20px;
+}
+@media (min-width: 576px) {
+  .container {
+    width: 550px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 800px;
+  }
+}
+
+/*  ======
+    Header
+    ======  */
+header {
+  display: flex;
+  border-bottom: 3px solid var(--accent-color);
+  padding: 0 10px;
+  justify-content: space-between;
+  align-items: stretch;
+}
+header select,
+header .new-task {
+  background-color: transparent;
+  border: none;
+  border: 3px solid var(--accent-color);
+  border-bottom: none;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+header select {
+  flex-grow: 1;
+  font-size: 1.2em;
+  margin-right: 10px;
+}
+header .new-task:hover {
+  cursor: pointer;
+  background-color: var(--accent-color);
+  color: var(--light-color);
+}
+
+/*  =============
+Habit Tracker
+=============  */
+.habit-tracker {
+  margin-top: 5px;
+  border-top: 3px solid var(--accent-color);
+  padding: 0 10px;
+}
+.habit-tracker span {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  border: 3px solid var(--accent-color);
+  border-top: none;
+  color: var(--accent-color);
+  font-weight: bold;
+  padding: 8px;
+}
+.habit-tracker span:hover,
+.habit-tracker span.active {
+  cursor: pointer;
+  background-color: var(--accent-color);
+  color: var(--light-color);
+}
