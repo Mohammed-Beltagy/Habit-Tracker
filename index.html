@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- Task List -->
     <div class="container">
       <!-- Header Section -->
       <header>
@@ -31,7 +32,9 @@
           <option value="option 2">Delete List</option>
           <option value="option 3" selected>option 3</option>
         </select>
-        <button class="new-task"><i class="fa-solid fa-plus fa-2x"></i></button>
+        <button id="new-task" class="new-task">
+          <i class="fa-solid fa-plus fa-2x"></i>
+        </button>
       </header>
       <section id="habit-tracker" class="habit-tracker">
         <span>1</span>
@@ -46,38 +49,24 @@
 
       <!-- Tasks Section -->
       <main>
-        <!-- Check-Box Task -->
-        <div class="task check">
+        <p id="no-tasks" class="no-tasks">
+          Click (+) Button To Create A New Task!
+        </p>
+
+        <!-- Default Task /If Created It From, Events Will Not Work/-->
+        <!-- <div class="task">
           <span class="checkbox"></span>
           <h3 class="task-title">Task Name</h3>
           <div class="btns">
-            <button class="delete"><i class="fa-solid fa-trash"></i></button
-            ><button class="edit">
-              <i class="fa-regular fa-pen-to-square"></i></button
-            ><button class="show-details">
-              <i class="fa-solid fa-bars"></i>
+            <button class="delete">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+            <button class="edit">
+              <i class="fa-regular fa-pen-to-square"></i>
             </button>
           </div>
           <p class="details">Type Details.</p>
-        </div>
-        <!-- Progress Task -->
-        <div class="task progress">
-          <span class="progress">-/-</span>
-          <h3 class="task-title">Task Name</h3>
-          <div class="btns">
-            <button class="up-down">
-              <i class="fa-solid fa-caret-up up-btn"></i>
-              <i class="fa-solid fa-caret-down down-btn"></i>
-            </button>
-            <button class="delete"><i class="fa-solid fa-trash"></i></button
-            ><button class="edit">
-              <i class="fa-regular fa-pen-to-square"></i></button
-            ><button class="show-details">
-              <i class="fa-solid fa-bars"></i>
-            </button>
-          </div>
-          <p class="details">Type Details.</p>
-        </div>
+        </div> -->
       </main>
     </div>
 
