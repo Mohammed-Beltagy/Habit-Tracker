@@ -50,17 +50,17 @@ header {
   justify-content: space-between;
   align-items: stretch;
 }
-header select,
+header input[type="text"],
 header .new-task {
   border-bottom: none;
   font-weight: bold;
 }
-header select {
+header input[type="text"] {
   flex-grow: 1;
   font-size: 1.2em;
   margin-right: 10px;
 }
-select,
+input[type="text"],
 .new-task {
   background-color: transparent;
   border: 3px solid var(--accent-color);
@@ -79,10 +79,14 @@ select,
   margin-top: 5px;
   border-top: 3px solid var(--accent-color);
   padding: 0 10px;
+  display: flex;
 }
-.habit-tracker span {
-  display: inline-block;
+.habit-tracker span,
+.habit-tracker .day-done {
+  display: block;
+  width: fit-content;
   padding: 8px;
+  margin-right: 5px;
   border: 3px solid var(--accent-color);
   border-top: none;
   /* Test Style */
@@ -90,16 +94,28 @@ select,
   font-weight: bold;
   user-select: none;
 }
-.habit-tracker span:hover,
-.habit-tracker span.active {
+.habit-tracker span.current {
+  background-color: var(--accent-color);
+  color: var(--light-color);
+}
+.habit-tracker .day-done.done {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+.habit-tracker .day-done {
+  background-color: transparent;
+  margin-left: auto;
+  margin-right: 0;
   cursor: pointer;
+}
+.habit-tracker .day-done:hover {
   background-color: var(--accent-color);
   color: var(--light-color);
 }
 
 /*  =============
-Tasks Section
-=============  */
+  Tasks Section
+  =============  */
 main {
   margin-top: 20px;
   border: 3px solid var(--accent-color);
@@ -133,7 +149,7 @@ main .task {
   background-color: var(--dark-color);
   color: var(--light-color);
 }
-button.active {
+.task .btns button.active {
   cursor: pointer;
   background-color: var(--accent-color);
   color: var(--light-color);
@@ -167,6 +183,6 @@ main .task .details {
   background-color: var(--dark-color);
   opacity: 0.7;
 }
-.task .checkbox.checked::before {
+.task.checked .checkbox::before {
   background-color: var(--dark-color);
 }
